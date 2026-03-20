@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Randevu Al - KAIROS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="navbar-holder"></div>
+
+  <section class="randevu-header">
+    <div class="randevu-header-content">
+      <h1>Size Nasıl Yardımcı Olabiliriz?</h1>
+      <p>KAIROS'ya hoş geldiniz. Size en kısa sürede dönüş sağlayabilmemiz için aşağıdaki formu doldurmanız yeterli.</p>
+    </div>
+  </section>
+
+  <section class="randevu-section">
+    <div class="randevu-container">
+      <form id="randevuForm" class="randevu-form">
+        <div class="form-group">
+          <label for="adSoyad">Adınız Soyadınız (Veli) *</label>
+          <input type="text" id="adSoyad" name="adSoyad" required />
+        </div>
+
+        <div class="form-group">
+          <label for="telefon">Telefon Numaranız *</label>
+          <input type="tel" id="telefon" name="telefon" placeholder="+90..." required />
+        </div>
+
+        <div class="form-group">
+          <label for="email">E-posta Adresiniz *</label>
+          <input type="email" id="email" name="email" required />
+        </div>
+
+        <div class="form-group">
+          <label for="cocukAdi">Çocuğunuzun Adı ve Yaşı *</label>
+          <input type="text" id="cocukAdi" name="cocukAdi" placeholder="Ad ve Yaş (örn: Ahmet, 12)" required />
+        </div>
+
+        <div class="form-group">
+          <label for="uzman">Görüşmek İstediğiniz Uzman (Tercihiniz varsa)</label>
+          <select id="uzman" name="uzman">
+            <option value="">-- Tercih belirtmeyin --</option>
+            <option value="uzman1">Dr. Fatma Yılmaz</option>
+            <option value="uzman2">Psk. Danışman Ahmet Kaya</option>
+            <option value="uzman3">Psk. Danışman Zeynep Demir</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="hizmet">Tercih Ettiğiniz Hizmet *</label>
+          <select id="hizmet" name="hizmet" required>
+            <option value="">-- Seçiniz --</option>
+            <option value="bireysel">Bireysel Terapi</option>
+            <option value="aile">Aile Danışmanlığı</option>
+            <option value="online">Online Danışmanlık</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="tarihSaat">Tercih Ettiğiniz Gün ve Saat Aralığı *</label>
+          <input type="datetime-local" id="tarihSaat" name="tarihSaat" required />
+        </div>
+
+        <div class="form-group">
+          <label for="mesaj">Kısa Mesaj (Bize iletmek istedikleriniz)</label>
+          <textarea id="mesaj" name="mesaj" rows="5" placeholder="Çocuğunuzun yaşadığı sorun hakkında kısaca bilgi veriniz..."></textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="checkbox-label">
+            <input type="checkbox" name="riza" required />
+            Kişisel verilerim işlenmesine izin veriyorum *
+          </label>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Randevu İsteği Gönder</button>
+      </form>
+
+      <div id="successMessage" class="success-message" style="display: none;">
+        <div class="success-content">
+          <h3>✓ Randevu İsteğiniz Alındı</h3>
+          <p>Teşekkür ederiz! Bilgileriniz başarıyla kaydedildi.</p>
+          <p>Size <strong>en geç 24 saat içinde</strong> telefon veya e-posta yoluyla dönüş yapılacaktır.</p>
+          <p>Lütfen sabırlı olunuz. KAIROS ekibi sizin için çalışmaktadır.</p>
+          <button onClick="location.href='Anasayfa.html'" class="btn btn-secondary">Ana Sayfaya Dön</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-holder"></div>
+
+  <script>
+    async function loadFragment(id, url) {
+      const response = await fetch(url);
+      if (!response.ok) {
+        console.error('Fragment yükleme hatası:', url, response.status);
+        return;
+      }
+      document.getElementById(id).innerHTML = await response.text();
+    }
+
+    loadFragment('navbar-holder', 'navbar.html');
+    loadFragment('footer-holder', 'footer.html');
+  </script>
+
+  <script>
+    document.getElementById('randevuForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      document.getElementById('randevuForm').style.display = 'none';
+      
+      document.getElementById('successMessage').style.display = 'block';
+      
+      window.scrollTo(0, 0);
+      
+      console.log('Form gönderildi:', {
+        adSoyad: document.getElementById('adSoyad').value,
+        telefon: document.getElementById('telefon').value,
+        email: document.getElementById('email').value,
+        cocukAdi: document.getElementById('cocukAdi').value,
+        uzman: document.getElementById('uzman').value,
+        hizmet: document.getElementById('hizmet').value,
+        tarihSaat: document.getElementById('tarihSaat').value,
+        mesaj: document.getElementById('mesaj').value
+      });
+    });
+  </script>
+
+</body>
+</html>

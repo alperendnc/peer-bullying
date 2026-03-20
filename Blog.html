@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bilgi Bankası / Blog - KAIROS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="navbar-holder"></div>
+
+
+  <section class="blog-header">
+    <div class="blog-header-content">
+      <h1>Bilgi Bankası / Blog</h1>
+      <p>Akran zorbalığı konusunda uzman görüşleri ve çözüm önerileri</p>
+    </div>
+  </section>
+
+  <section class="blog-section">
+    <div class="blog-container">
+      <div class="blog-posts">
+        <article class="blog-post">
+          <div class="blog-post-content">
+            <h2>Akran Zorbalığı Nedir? Nasıl Anlaşılır?</h2>
+            <p>Akran zorbalığı, bir çocuğun veya ergenin, başka bir çocuk/ergen tarafından kasıtlı ve sürekli olarak rahatsız edilmesi, incitilmesi veya dışlanmasıdır. Arkadaşlar arasında zaman zaman yaşanan anlaşmazlıklardan farklı olarak zorbalıkta bir güç dengesizliği vardır ve davranışlar tekrarlayıcıdır...</p>
+            <a href="#" class="read-more">Devamı için tıklayın</a>
+          </div>
+        </article>
+
+        <article class="blog-post">
+          <div class="blog-post-content">
+            <h2>Çocuğum Zorbalığa Uğruyor mu? Ebeveynler İçin 10 İşaret</h2>
+            <p>Çocuklar çoğu zaman zorbalığa uğradıklarını gizlerler. Utanır, korkar veya "bir şey değişmeyecek" diye düşünürler. Peki ebeveynler olarak nelere dikkat etmelisiniz? İşte çocuğunuzun zorbalığa uğradığını gösteren 10 önemli işaret...</p>
+            <a href="#" class="read-more">Devamı için tıklayın</a>
+          </div>
+        </article>
+
+        <article class="blog-post">
+          <div class="blog-post-content">
+            <h2>Siber Zorbalık Çağı: Dijital Dünyada Çocuklarımızı Korumak</h2>
+            <p>Artık zorbalık sadece okul bahçesinde olmuyor. Sosyal medya, oyun platformları ve anlık mesajlaşma uygulamaları, siber zorbalığın yeni adresleri. Peki siber zorbalık nedir? Çocuğunuz siber zorbalığa uğruyorsa ne yapmalısınız? Bu yazıda dijital dünyada çocuklarınızı korumanın yollarını anlatıyoruz...</p>
+            <a href="#" class="read-more">Devamı için tıklayın</a>
+          </div>
+        </article>
+
+        <article class="blog-post">
+          <div class="blog-post-content">
+            <h2>Çocuğum Zorbalık Yapıyor: Ne Yapmalıyım?</h2>
+            <p>Bu belki de bir ebeveynin duymak istediği en zor cümle. Ama unutmayın, zorbalık yapan çocuklar da aslında yardıma ihtiyaç duyar. Suçluluk duymak yerine çözüm odaklı adımlar atmak, hem çocuğunuz hem de çevresi için çok önemlidir. İşte yapabilecekleriniz...</p>
+            <a href="#" class="read-more">Devamı için tıklayın</a>
+          </div>
+        </article>
+      </div>
+
+      <aside class="blog-sidebar">
+        <div class="emergency-help">
+          <h3>🚨 Acil Yardım Hatları</h3>
+          <div class="help-lines">
+            <div class="help-line">
+              <h4>ALO 183</h4>
+              <p>Aile, Kadın, Çocuk ve Engelli Sosyal Hizmet Danışma Hattı</p>
+              <p class="help-detail">7/24 ücretsiz danışmanlık</p>
+              <a href="tel:183" class="help-btn">Ara</a>
+            </div>
+
+            <div class="help-line">
+              <h4>Çocuk İhbar Hattı</h4>
+              <p>Çocuk istismarı ve zorbalık ihbarları için</p>
+              <p class="help-detail">0212 656 96 96</p>
+              <a href="tel:02126569696" class="help-btn">Ara</a>
+            </div>
+
+            <div class="help-line">
+              <h4>Polis Çocuk Şubesi</h4>
+              <p>Bulunduğunuz ilin emniyet müdürlüğüne bağlı çocuk şubesi ile iletişime geçebilirsiniz.</p>
+              <a href="tel:155" class="help-btn">Polis 155</a>
+            </div>
+
+            <div class="help-line">
+              <h4>Yeşilay Danışmanlık Merkezi (YEDAM)</h4>
+              <p>Bağımlılıkla ilgili destek - siber bağımlılık için de danışabilirsiniz.</p>
+              <p class="help-detail">115</p>
+              <a href="tel:115" class="help-btn">Ara</a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+   <div id="footer-holder"></div>
+
+  <script>
+    async function loadFragment(id, url) {
+      const response = await fetch(url);
+      if (!response.ok) {
+        console.error('Fragment yükleme hatası:', url, response.status);
+        return;
+      }
+      document.getElementById(id).innerHTML = await response.text();
+    }
+
+    loadFragment('navbar-holder', 'navbar.html');
+    loadFragment('footer-holder', 'footer.html');
+  </script>
+</body>
+</html>

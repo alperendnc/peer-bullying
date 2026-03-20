@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Online Danışmanlık - KAIROS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="navbar-holder"></div>
+
+
+  <section class="online-header">
+    <div class="online-header-content">
+      <h1>Destek, Bir Tık Uzağında</h1>
+      <p>Yüz yüze görüşme imkanınız yoksa, şehir dışındaysanız veya zaman kısıtlaması yaşıyorsanız, online danışmanlık hizmetimizle size ulaşıyoruz. Güvenli, gizli ve etkili online terapi seanslarıyla çocuğunuzun yanında olun.</p>
+    </div>
+  </section>
+
+  <section class="online-section">
+    <div class="online-container">
+      <div class="online-process">
+        <h2>Online Danışmanlık Nasıl İşliyor?</h2>
+
+        <div class="process-steps">
+          <div class="step">
+            <div class="step-number">1</div>
+            <div class="step-content">
+              <h3>Randevu Alın</h3>
+              <p>Web sitemizden veya telefonla size uygun bir uzman ve saat seçin.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">2</div>
+            <div class="step-content">
+              <h3>Bağlantı Kurun</h3>
+              <p>Seans saati geldiğinde, size göndereceğimiz güvenli görüntülü görüşme linkine tıklayın. (Zoom veya benzeri, şifre korumalı bir platform kullanıyoruz.)</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">3</div>
+            <div class="step-content">
+              <h3>Görüşme Yapın</h3>
+              <p>Uzmanımızla birebir görüşmenizi gerçekleştirin. Tıpkı yüz yüze görüşme gibi, seans süresi 45-50 dakikadır.</p>
+            </div>
+          </div>
+
+          <div class="step">
+            <div class="step-number">4</div>
+            <div class="step-content">
+              <h3>Gizlilik</h3>
+              <p>Tüm görüşmeler uçtan uca şifrelenmiştir. Kayıt alınmaz ve üçüncü kişilerle paylaşılmaz.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="online-advantages">
+        <h2>Online Terapinin Avantajları</h2>
+
+        <div class="advantages-grid">
+          <div class="advantage-card">
+            <div class="advantage-icon">🏠</div>
+            <h3>Evinizin Konforunda</h3>
+            <p>Güvenli bir ortamda terapi alın</p>
+          </div>
+
+          <div class="advantage-card">
+            <div class="advantage-icon">⏰</div>
+            <h3>Zamandan Tasarruf</h3>
+            <p>Ulaşım maliyetinden kurtulun</p>
+          </div>
+
+          <div class="advantage-card">
+            <div class="advantage-icon">🌍</div>
+            <h3>Her Yerden Erişim</h3>
+            <p>Türkiye'nin her yerinden uzman desteğine ulaşın</p>
+          </div>
+
+          <div class="advantage-card">
+            <div class="advantage-icon">🇹🇷</div>
+            <h3>Anadil Terapi</h3>
+            <p>Yurt dışında yaşayan Türk aileler için</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="online-cta">
+        <h2>Hemen Başlayın</h2>
+        <p>Online danışmanlık hizmetimiz hakkında daha fazla bilgi almak veya randevu oluşturmak için bizimle iletişime geçin.</p>
+        <div class="cta-buttons">
+          <a href="randevu.html" class="btn btn-primary">Randevu Al</a>
+          <a href="tel:+905555555555" class="btn btn-secondary">Bizi Ara</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-holder"></div>
+
+  <script>
+    async function loadFragment(id, url) {
+      const response = await fetch(url);
+      if (!response.ok) {
+        console.error('Fragment yükleme hatası:', url, response.status);
+        return;
+      }
+      document.getElementById(id).innerHTML = await response.text();
+    }
+
+    loadFragment('navbar-holder', 'navbar.html');
+    loadFragment('footer-holder', 'footer.html');
+  </script>
+
+</body>
+</html>

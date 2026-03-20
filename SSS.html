@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sıkça Sorulan Sorular - KAIROS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div id="navbar-holder"></div>
+
+  <section class="faq-header">
+    <div class="faq-header-content">
+      <h1>Sıkça Sorulan Sorular</h1>
+      <p>KAIROS hizmetleri hakkında merak ettikleriniz</p>
+    </div>
+  </section>
+
+  <section class="faq-section">
+    <div class="faq-container">
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Seans ücretleri ne kadar?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Seans ücretlerimiz uzmanımıza ve hizmet türüne göre değişiklik göstermektedir. Güncel ücret bilgisi için lütfen bizimle telefonla iletişime geçin veya randevu formunda belirtin, size dönüş yapalım.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Online terapi nasıl işliyor, hangi platformu kullanıyorsunuz?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Online terapi seanslarımızı, şifre korumalı ve uçtan uca şifrelenmiş Zoom platformu üzerinden gerçekleştiriyoruz. Seans saatinden hemen önce size e-posta veya SMS ile bağlantı linki gönderiyoruz. Linke tıklayarak görüşmeye katılabiliyorsunuz.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>İlk seansta ne olur?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>İlk seans genellikle sizinle (ebeveynlerle) yapılır. Çocuğunuzun gelişimi, yaşadığınız sorunlar, şimdiye kadar neler denediğiniz ve hedefleriniz hakkında konuşuruz. Bu seans aynı zamanda uzmanımızı tanımanız ve sorularınızı sormanız için bir fırsattır. Gerekli görülürse, çocuğunuzla da kısa bir tanışma görüşmesi yapılabilir.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Seanslar ne kadar sürer ve ne sıklıkla olmalı?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Seanslar genellikle 45-50 dakikadır. Terapi süreci, çocuğunuzun ihtiyacına göre değişmekle birlikte, düzenli ilerleme için haftada bir görüşme önerilir.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <div class="faq-question">
+          <h3>Çocuğumun sorunları hakkında uzmanla nasıl iletişim kurabilirim?</h3>
+          <span class="faq-toggle">+</span>
+        </div>
+        <div class="faq-answer">
+          <p>Seanslar dışında acil bir durum olmadıkça, uzmanımızla iletişim kurmak için randevu almanız beklenir. Ancak, seans ücretlendirmeleri, randevu değişiklikleri veya idari konular için resepsiyon ekibimizle her zaman iletişime geçebilirsiniz.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script>
+    document.querySelectorAll('.faq-question').forEach(question => {
+      question.addEventListener('click', function() {
+        const item = this.closest('.faq-item');
+        item.classList.toggle('active');
+      });
+    });
+  </script>
+
+ <div id="footer-holder"></div>
+
+  <script>
+    async function loadFragment(id, url) {
+      const response = await fetch(url);
+      if (!response.ok) {
+        console.error('Fragment yükleme hatası:', url, response.status);
+        return;
+      }
+      document.getElementById(id).innerHTML = await response.text();
+    }
+
+    loadFragment('navbar-holder', 'navbar.html');
+    loadFragment('footer-holder', 'footer.html');
+  </script>
+</body>
+</html>

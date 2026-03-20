@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Akran Zorbalığı Testi - KAIROS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="Anasayfa.html" class="navbar-brand">KAIROS</a>
+      <ul class="navbar-menu">
+        <li><a href="hizmetler.html">Hizmetlerimiz</a></li>
+        <li><a href="hakkimizda.html">Hakkımızda</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="onerilen.html">Öneriler</a></li>
+        <li><a href="sss.html">Sıkça Sorulan Sorular</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <section class="test-header">
+    <div class="test-header-content">
+      <h1>Akran Zorbalığı Testi</h1>
+      <p>Çocuğunuzun zorbalığa uğrayıp uğramadığını değerlendirin</p>
+    </div>
+  </section>
+
+  <section class="test-section">
+    <div class="test-container">
+      <div class="test-intro">
+        <h2>Test Hakkında</h2>
+        <p>Bu test, çocuğunuzun akran zorbalığına uğrayıp uğramadığını değerlendirmenize yardımcı olmak için hazırlanmıştır. Test, uluslararası kabul görmüş ölçeklerden uyarlanmıştır ve yaklaşık 5-10 dakika sürer.</p>
+
+        <div class="test-notice">
+          <h3>⚠️ Önemli Notlar</h3>
+          <ul>
+            <li>Bu test tanı amaçlı değildir, sadece yönlendirme sağlar.</li>
+            <li>Test sonuçları için mutlaka uzman görüşü alın.</li>
+            <li>Eğer çocuğunuz zorbalığa uğruyorsa, hemen müdahale edilmesi önemlidir.</li>
+            <li>Testi doldururken son 1 aylık dönemi göz önünde bulundurun.</li>
+          </ul>
+        </div>
+
+        <button id="startTest" class="btn btn-primary">Testi Başlat</button>
+      </div>
+
+      <form id="testForm" class="test-form" style="display: none;">
+        <div class="question-counter">
+          <span id="currentQuestion">1</span> / 15
+        </div>
+
+        <div id="questionContainer">
+        </div>
+
+        <div class="test-navigation">
+          <button type="button" id="prevBtn" class="btn btn-secondary" style="display: none;">Önceki</button>
+          <button type="button" id="nextBtn" class="btn btn-primary">Sonraki</button>
+        </div>
+      </form>
+
+      <div id="results" class="test-results" style="display: none;">
+        <h2>Test Sonuçları</h2>
+
+        <div class="result-score">
+          <div class="score-circle">
+            <span id="scorePercentage">0</span>
+            <span class="score-label">Risk Seviyesi</span>
+          </div>
+        </div>
+
+        <div class="result-interpretation">
+          <h3 id="resultTitle">Değerlendirme</h3>
+          <p id="resultText">Sonuçlarınız analiz ediliyor...</p>
+        </div>
+
+        <div class="result-recommendations">
+          <h3>Öneriler</h3>
+          <ul id="recommendationsList">
+          </ul>
+        </div>
+
+        <div class="result-actions">
+          <a href="randevu.html" class="btn btn-primary">Uzman Görüşü Al</a>
+          <a href="blog.html" class="btn btn-secondary">Bilgi Bankası</a>
+          <button id="retakeTest" class="btn btn-accent">Testi Tekrar Yap</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-section map-section">
+        <h4>Harita ve Adres</h4>
+        <div class="map-placeholder">
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3025.5982622015627!2d35.28!3d40.82!2m3!1f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDDCsDQ5JzEyLjAiTiAzNcKwMTYnNDguMCJF!5e0!3m2!1str!2str!4v1234567890" width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+      </div>
+
+      <div class="footer-section address-section">
+        <h4>📍 Adres Bilgileri</h4>
+        <p>
+          <strong>KAIROS Psikolojik Danışmanlık Merkezi</strong><br>
+          Örnek Mahallesi, Danışman Sokak No: 5, Kat:2<br>
+          Söğütlü / Trabzon
+        </p>
+      </div>
+
+      <div class="footer-section contact-section">
+        <h4>📞 Telefon ve E-posta</h4>
+        <p>
+          <strong>Telefon:</strong> <a href="tel:+905555555555">+90 (212) 555 55 55</a><br>
+          <strong>WhatsApp:</strong> <a href="https://wa.me/905551234567" target="_blank" class="whatsapp-btn">+90 (555) 123 45 67</a><br>
+          <strong>E-posta:</strong> <a href="mailto:info@kairospsikoloji.com">info@kairospsikoloji.com</a>
+        </p>
+      </div>
+
+      <div class="footer-section hours-section">
+        <h4>🕐 Çalışma Saatleri</h4>
+        <p>
+          <strong>Pazartesi - Cuma:</strong> 09:00 - 20:00<br>
+          <strong>Cumartesi:</strong> 10:00 - 16:00<br>
+          <strong>Pazar:</strong> <span class="closed">Kapalı</span>
+        </p>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <p>&copy; 2026 KAIROS Psikolojik Danışmanlık Merkezi. Tüm hakları saklıdır.</p>
+    </div>
+  </footer>
+
+  <script>
+    const questions = [
+      {
+        question: "Çocuğunuz son zamanlarda okula gitmek istemiyor mu?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuzun eşyaları sık sık kayboluyor veya bozuluyor mu?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuz arkadaşlarıyla oynamaktan kaçınıyor mu?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuzun davranışlarında ani değişiklikler oluyor mu (daha içine kapanık, agresif vb.)?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuz yemek yemiyor veya uyku düzeninde sorun yaşıyor mu?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuz okul sonrası aktivitelerden kaçınıyor mu?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuz size zorbalık yaşadığını söyledi mi?",
+        options: ["Hayır", "Evet, bir kez", "Evet, birkaç kez", "Evet, sık sık"]
+      },
+      {
+        question: "Çocuğunuzun vücudunda açıklanamayan yaralar, çürükler var mı?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuz derslerinde başarısı düştü mü?",
+        options: ["Hiç", "Biraz", "Orta derecede", "Çok fazla"]
+      },
+      {
+        question: "Çocuğunuz sosyal medya veya mesajlaşma uygulamalarında sorun yaşıyor mu?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuz arkadaş grubundan dışlanıyor mu?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuz ev ödevlerini yapmaktan kaçınıyor mu?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuzun özgüveni düştü mü?",
+        options: ["Hiç", "Biraz", "Orta derecede", "Çok fazla"]
+      },
+      {
+        question: "Çocuğunuz okulda yalnız mı kalıyor?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      },
+      {
+        question: "Çocuğunuz zorbalıkla ilgili kabus görüyor mu?",
+        options: ["Hiç", "Bazen", "Sık sık", "Her zaman"]
+      }
+    ];
+
+    let currentQuestionIndex = 0;
+    let answers = new Array(questions.length).fill(null);
+
+    document.getElementById('startTest').addEventListener('click', function() {
+      document.querySelector('.test-intro').style.display = 'none';
+      document.getElementById('testForm').style.display = 'block';
+      showQuestion(0);
+    });
+
+    function showQuestion(index) {
+      const questionContainer = document.getElementById('questionContainer');
+      const currentQ = questions[index];
+
+      questionContainer.innerHTML = `
+        <div class="question">
+          <h3>${currentQ.question}</h3>
+          <div class="options">
+            ${currentQ.options.map((option, optionIndex) => `
+              <label class="option-label">
+                <input type="radio" name="question${index}" value="${optionIndex}" ${answers[index] === optionIndex ? 'checked' : ''}>
+                <span class="option-text">${option}</span>
+              </label>
+            `).join('')}
+          </div>
+        </div>
+      `;
+
+      document.getElementById('currentQuestion').textContent = index + 1;
+
+      document.getElementById('prevBtn').style.display = index > 0 ? 'inline-block' : 'none';
+      document.getElementById('nextBtn').textContent = index === questions.length - 1 ? 'Sonuçları Göster' : 'Sonraki';
+    }
+
+    document.getElementById('nextBtn').addEventListener('click', function() {
+      const selectedOption = document.querySelector(`input[name="question${currentQuestionIndex}"]:checked`);
+
+      if (!selectedOption) {
+        alert('Lütfen bir seçenek seçin.');
+        return;
+      }
+
+      answers[currentQuestionIndex] = parseInt(selectedOption.value);
+
+      if (currentQuestionIndex < questions.length - 1) {
+        currentQuestionIndex++;
+        showQuestion(currentQuestionIndex);
+      } else {
+        showResults();
+      }
+    });
+
+    document.getElementById('prevBtn').addEventListener('click', function() {
+      if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        showQuestion(currentQuestionIndex);
+      }
+    });
+
+    function showResults() {
+      document.getElementById('testForm').style.display = 'none';
+      document.getElementById('results').style.display = 'block';
+
+      const totalScore = answers.reduce((sum, answer) => sum + answer, 0);
+      const maxScore = (questions.length - 1) * 3; 
+      const percentage = Math.round((totalScore / maxScore) * 100);
+
+      document.getElementById('scorePercentage').textContent = percentage + '%';
+
+      let resultTitle, resultText, recommendations;
+
+      if (percentage <= 20) {
+        resultTitle = 'Düşük Risk';
+        resultText = 'Çocuğunuzun zorbalığa uğradığına dair belirgin işaretler bulunmuyor. Ancak bu durum zaman içinde değişebilir. Çocuğunuzla iletişim halinde kalın ve gelişmeleri takip edin.';
+        recommendations = [
+          'Çocuğunuzla açık iletişim kurmaya devam edin',
+          'Okul aktivitelerine katılımını teşvik edin',
+          'Arkadaşlık ilişkilerini gözlemleyin'
+        ];
+      } else if (percentage <= 50) {
+        resultTitle = 'Orta Risk';
+        resultText = 'Çocuğunuzda zorbalığa uğradığına dair bazı işaretler var. Bu durumun gelişip gelişmediğini yakından takip edin. Gerekirse okul yönetimi ve öğretmenlerle görüşün.';
+        recommendations = [
+          'Okul müdürü veya sınıf öğretmeniyle görüşün',
+          'Çocuğunuzun duygusal durumunu yakından takip edin',
+          'Sosyal becerilerini geliştirecek aktiviteler planlayın',
+          'Gerekirse uzman görüşü alın'
+        ];
+      } else {
+        resultTitle = 'Yüksek Risk';
+        resultText = 'Çocuğunuzun zorbalığa uğradığına dair güçlü işaretler var. Hemen müdahale edilmesi gerekiyor. Profesyonel yardım alın ve okul yönetimiyle işbirliği yapın.';
+        recommendations = [
+          'Derhal uzman psikolojik danışmanlık alın',
+          'Okul yönetimiyle acil toplantı yapın',
+          'Polis veya ilgili mercilere başvurun (gerekirse)',
+          'Çocuğunuzla duygusal destek sağlayın',
+          'Aile içi iletişim güçlendirin'
+        ];
+      }
+
+      document.getElementById('resultTitle').textContent = resultTitle;
+      document.getElementById('resultText').textContent = resultText;
+
+      const recommendationsList = document.getElementById('recommendationsList');
+      recommendationsList.innerHTML = recommendations.map(rec => `<li>${rec}</li>`).join('');
+
+      window.scrollTo(0, 0);
+    }
+
+    document.getElementById('retakeTest').addEventListener('click', function() {
+      currentQuestionIndex = 0;
+      answers = new Array(questions.length).fill(null);
+      document.getElementById('results').style.display = 'none';
+      document.querySelector('.test-intro').style.display = 'block';
+      window.scrollTo(0, 0);
+    });
+  </script>
+
+</body>
+</html>

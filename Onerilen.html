@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Önerilen Kitap ve Makaleler - KAIROS</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+   <div id="navbar-holder"></div>
+
+
+  <section class="onerilen-header">
+    <div class="onerilen-header-content">
+      <h1>Önerilen Kitap ve Makaleler</h1>
+      <p>Akran zorbalığı konusunda uzmanların önerdiği kaynaklar</p>
+    </div>
+  </section>
+
+  <section class="onerilen-section">
+    <div class="onerilen-container">
+      <div class="kitap-kategori">
+        <h2>📚 Ebeveynler İçin</h2>
+        <div class="kitap-grid">
+          <div class="kitap-card">
+            <div class="kitap-info">
+              <h3>"Zorbalık"</h3>
+              <p class="yazar">Jenny Alexander</p>
+              <p class="yayinevi">Pegasus Yayınları</p>
+            </div>
+          </div>
+
+          <div class="kitap-card">
+            <div class="kitap-info">
+              <h3>"Siber Zorbalık"</h3>
+              <p class="yazar">Sameer Hinduja, Justin W. Patchin</p>
+              <p class="yayinevi">Nobel Yaşam</p>
+            </div>
+          </div>
+
+          <div class="kitap-card">
+            <div class="kitap-info">
+              <h3>"Çocuklarla Doğru İletişim"</h3>
+              <p class="yazar">Lawrence E. Shapiro</p>
+              <p class="yayinevi">Butik Yayınları</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kitap-kategori">
+        <h2>📖 Çocuklar İçin (Hikaye Kitapları)</h2>
+        <div class="kitap-grid">
+          <div class="kitap-card">
+            <div class="kitap-info">
+              <h3>"Zorba Olmayı Bırak!"</h3>
+              <p class="yazar">Sue Graves</p>
+              <p class="yayinevi">TÜBİTAK Yayınları</p>
+            </div>
+          </div>
+
+          <div class="kitap-card">
+            <div class="kitap-info">
+              <h3>"Hayır Diyebilirim"</h3>
+              <p class="yazar">Elif Yorulmaz</p>
+              <p class="yayinevi">Abm Yayınevi</p>
+            </div>
+          </div>
+
+          <div class="kitap-card">
+            <div class="kitap-info">
+              <h3>"Benim Adım Zorba Değil"</h3>
+              <p class="yazar">Trudy Ludwig</p>
+              <p class="yayinevi">Elma Yayınevi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="kitap-kategori">
+        <h2>🎓 Öğretmenler İçin</h2>
+        <div class="kitap-grid">
+          <div class="kitap-card">
+            <div class="kitap-info">
+              <h3>"Akran Zorbalığı: Okulda ve Sınıfta Önleme ve Müdahale Yöntemleri"</h3>
+              <p class="yazar">Kolektif</p>
+              <p class="yayinevi">Anı Yayıncılık</p>
+            </div>
+          </div>
+
+          <div class="kitap-card">
+            <div class="kitap-info">
+              <h3>"Zorbalığı Önleme Kılavuzu"</h3>
+              <p class="yazar">Allan L. Beane</p>
+              <p class="yayinevi">Nobel Akademik Yayıncılık</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="onerilen-note">
+        <p><strong>Not:</strong> Bu kitaplar akran zorbalığı konusunda uzman psikologların önerileri doğrultusunda seçilmiştir. Kitapların bulunabilirliği ve fiyatları yayınevlerine göre değişiklik gösterebilir.</p>
+        <p>Bu kaynaklar, zorbalık konusunda farkındalık yaratmak ve çözüm önerileri sunmak amacıyla önerilmiştir. Profesyonel yardım almak için uzman danışmanlarımızla iletişime geçebilirsiniz.</p>
+      </div>
+    </div>
+  </section>
+
+  <div id="footer-holder"></div>
+
+  <script>
+    async function loadFragment(id, url) {
+      const response = await fetch(url);
+      if (!response.ok) {
+        console.error('Fragment yükleme hatası:', url, response.status);
+        return;
+      }
+      document.getElementById(id).innerHTML = await response.text();
+    }
+
+    loadFragment('navbar-holder', 'navbar.html');
+    loadFragment('footer-holder', 'footer.html');
+  </script>
+
+</body>
+</html>
