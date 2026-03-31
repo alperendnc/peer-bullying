@@ -1253,11 +1253,31 @@ html, body {
 }
 
 .ekip-photo {
-  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-  height: 200px;
+  min-height: 200px;
   display: flex;
   align-items: center;
   justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+
+.ekip-photo::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  opacity: 0.1;
+  border-radius: 8px;
+}
+
+.ekip-photo img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+  position: relative;
+  z-index: 1;
 }
 
 .photo-placeholder {
